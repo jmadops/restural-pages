@@ -1182,26 +1182,32 @@
       background-size: 28px 28px;
     }
     .restural-lp-badges-grid {
-      max-width: 920px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: center;
+      max-width: 920px; margin: 8px auto 0;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; text-align: center;
     }
     .restural-lp-badge-item {
-      background: var(--rlp-white); border-radius: var(--rlp-radius);
-      padding: 28px 14px; display: flex; flex-direction: column;
-      align-items: center; gap: 10px;
-      border: 1px solid var(--rlp-border-light);
-      transition: border-color 0.2s, transform 0.2s;
+      background: transparent; border: none; padding: 0;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      transition: transform 220ms ease;
     }
-    .restural-lp-badge-item:hover { border-color: var(--rlp-green); transform: translateY(-3px); }
+    .restural-lp-badge-item:hover { transform: translateY(-4px); }
     .restural-lp-badge-icon {
-      width: 56px; height: 56px; background: var(--rlp-green-light);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; color: var(--rlp-green-dark);
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--rlp-white);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(14,31,90,0.12);
+    }
+    .restural-lp-badge-icon img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .restural-lp-badge-label {
-      font-size: 0.8rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.06em;
+      font-size: 0.88rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
       color: var(--rlp-navy);
+      max-width: 160px; line-height: 1.35;
     }
 
     /* ===== PRICING ===== */
@@ -2265,12 +2271,22 @@
       <div class="restural-lp-divider"></div>
     </div>
     <div class="restural-lp-badges-grid">
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">⚕</div><span class="restural-lp-badge-label">Clinically Backed</span></div>
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">☘</div><span class="restural-lp-badge-label">Natural Ingredients</span></div>
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">✚</div><span class="restural-lp-badge-label">Non-Invasive</span></div>
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">♚</div><span class="restural-lp-badge-label">Pill-Free</span></div>
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">✓</div><span class="restural-lp-badge-label">Side-Effect Free</span></div>
-      <div class="restural-lp-badge-item"><div class="restural-lp-badge-icon">⚖</div><span class="restural-lp-badge-label">365-Day Guarantee</span></div>
+      <div class="restural-lp-badge-item">
+        <div class="restural-lp-badge-icon"><img src="v2-images/decor/nf_promise_clinical_natural.png" alt="" loading="lazy" /></div>
+        <span class="restural-lp-badge-label">Clinically Backed Natural Ingredients</span>
+      </div>
+      <div class="restural-lp-badge-item">
+        <div class="restural-lp-badge-icon"><img src="v2-images/decor/nf_promise_noninvasive.png" alt="" loading="lazy" /></div>
+        <span class="restural-lp-badge-label">Non-Invasive</span>
+      </div>
+      <div class="restural-lp-badge-item">
+        <div class="restural-lp-badge-icon"><img src="v2-images/decor/nf_promise_pillfree.png" alt="" loading="lazy" /></div>
+        <span class="restural-lp-badge-label">Pill-Free</span>
+      </div>
+      <div class="restural-lp-badge-item">
+        <div class="restural-lp-badge-icon"><img src="v2-images/decor/nf_promise_sideeffectfree.png" alt="" loading="lazy" /></div>
+        <span class="restural-lp-badge-label">Side-Effect Free</span>
+      </div>
     </div>
     <div class="restural-lp-container" style="max-width: 720px; text-align: center; margin-top: 40px;">
       <p style="font-size: 1.05rem; line-height: 1.7; color: var(--rlp-text-dark);">We've put NeuroFuel in the hands of 12,000+ customers. Tested it across 40 rehabilitation clinics. Tracked 520 patients through three months of recovery. The results are why we stand behind every cup with a full <strong>365-day money-back guarantee</strong> — the longest in the industry.</p>
