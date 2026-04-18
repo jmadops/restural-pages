@@ -1031,6 +1031,27 @@
       background-image: var(--rlp-dots-cream);
       background-size: 28px 28px;
     }
+    .restural-lp-social-proof-grid {
+      max-width: 1040px; margin: 36px auto 0;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .restural-lp-social-proof-card {
+      background: var(--rlp-white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(14,31,90,0.08);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+    .restural-lp-social-proof-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(14,31,90,0.14);
+    }
+    .restural-lp-social-proof-card img {
+      display: block; width: 100%; height: auto;
+    }
+    @media (max-width: 640px) {
+      .restural-lp-social-proof-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
 
     /* ===== WHO FOR / NOT FOR ===== */
     .restural-lp-whofor {
@@ -1878,9 +1899,8 @@
           <p>The hospital saves your life. The therapist retrains your movement. The doctor writes the prescription.</p>
           <p><em>But nobody is feeding your brain what it needs to actually rebuild.</em></p>
         </div>
-        <div class="restural-lp-img-ph restural-lp-img-ph--on-dark restural-lp-img-ph--square">
-          <span class="restural-lp-img-ph-icon">📷</span>
-          <span class="restural-lp-img-ph-label">{{SECTION_2_1_PLACEHOLDER}}<br>Section 2.1 asset — URL pending</span>
+        <div class="restural-lp-img-ph restural-lp-img-ph--on-dark restural-lp-img-ph--square restural-lp-img-ph--loaded">
+          <img src="https://cdn.shopify.com/s/files/1/0741/8282/0057/files/Section_2_1.png?v=1776507075" alt="Recovery plateau — stuck between therapy and medication" loading="lazy" />
         </div>
       </div>
 
@@ -2076,19 +2096,31 @@
     </div>
     <div class="restural-lp-howto-steps">
       <div class="restural-lp-howto-step">
-        <div class="restural-lp-img-ph restural-lp-img-ph--square"><span class="restural-lp-img-ph-icon">📷</span><span class="restural-lp-img-ph-label">{{RESTURAL_IMG_step-1}}<br>Opening a sachet</span></div>
+        <div class="restural-lp-img-ph restural-lp-img-ph--square restural-lp-img-ph--loaded">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="Opening a NeuroFuel sachet">
+            <source src="https://cdn.shopify.com/videos/c/o/v/8139901a18d449e98fd5b3a727e7fc87.mp4" type="video/mp4">
+          </video>
+        </div>
         <span class="restural-lp-howto-step-number">1</span>
         <h3>Open Your Packet</h3>
         <p>Tear open a single-serve sachet and pour into your favorite mug.</p>
       </div>
       <div class="restural-lp-howto-step">
-        <div class="restural-lp-img-ph restural-lp-img-ph--square"><span class="restural-lp-img-ph-icon">📷</span><span class="restural-lp-img-ph-label">{{RESTURAL_IMG_step-2}}<br>Adding hot water and stirring</span></div>
+        <div class="restural-lp-img-ph restural-lp-img-ph--square restural-lp-img-ph--loaded">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="Adding hot water and stirring">
+            <source src="https://cdn.shopify.com/videos/c/o/v/8c42aed818ae4d4698c8c9ab21801f8d.mp4" type="video/mp4">
+          </video>
+        </div>
         <span class="restural-lp-howto-step-number">2</span>
         <h3>Add Hot Water & Stir</h3>
         <p>Brew like instant coffee. Add milk or sweetener to taste.</p>
       </div>
       <div class="restural-lp-howto-step">
-        <div class="restural-lp-img-ph restural-lp-img-ph--square"><span class="restural-lp-img-ph-icon">📷</span><span class="restural-lp-img-ph-label">{{RESTURAL_IMG_step-3}}<br>Drinking NeuroFuel coffee</span></div>
+        <div class="restural-lp-img-ph restural-lp-img-ph--square restural-lp-img-ph--loaded">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="Drinking NeuroFuel coffee">
+            <source src="https://cdn.shopify.com/videos/c/o/v/45cda82ebfd14b07917c3a20f5dc60a5.mp4" type="video/mp4">
+          </video>
+        </div>
         <span class="restural-lp-howto-step-number">3</span>
         <h3>Drink Daily, Recover Faster</h3>
         <p>One cup each morning. First results in 2-3 weeks.</p>
@@ -2228,11 +2260,11 @@
       <h2 class="restural-lp-section-heading">Real Reviews From <em>Real People</em></h2>
       <p class="restural-lp-section-heading-sub">Thousands of comments, messages, and reviews from customers across Facebook, Instagram, and email.</p>
     </div>
-    <div style="max-width: 960px; margin: 32px auto 0; padding: 0 24px;">
-      <div class="restural-lp-img-ph restural-lp-img-ph--wide" style="aspect-ratio: 3/2; min-height: 0;">
-        <span class="restural-lp-img-ph-icon">📷</span>
-        <span class="restural-lp-img-ph-label">{{RESTURAL_IMG_social-reviews}}<br>Facebook comments &amp; review screenshots collage</span>
-      </div>
+    <div class="restural-lp-social-proof-grid">
+      <div class="restural-lp-social-proof-card"><img src="https://cdn.shopify.com/s/files/1/0741/8282/0057/files/hf_20260418_102051_02df5980-1e61-455d-9797-efb9f84596a7.png?v=1776507743" alt="Real customer review" loading="lazy" /></div>
+      <div class="restural-lp-social-proof-card"><img src="https://cdn.shopify.com/s/files/1/0741/8282/0057/files/hf_20260418_102102_ed4e539f-8b63-400b-a9ba-e0e08f09424f.png?v=1776507743" alt="Real customer review" loading="lazy" /></div>
+      <div class="restural-lp-social-proof-card"><img src="https://cdn.shopify.com/s/files/1/0741/8282/0057/files/hf_20260418_102028_e3c44e29-7ff8-4e48-8ebd-22e4e77f24e0.png?v=1776507745" alt="Real customer review" loading="lazy" /></div>
+      <div class="restural-lp-social-proof-card"><img src="https://cdn.shopify.com/s/files/1/0741/8282/0057/files/hf_20260418_102042_237b262e-2c37-4730-9df0-a5d3e889b9ed.png?v=1776507743" alt="Real customer review" loading="lazy" /></div>
     </div>
   </section>
 
