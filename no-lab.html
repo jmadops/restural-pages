@@ -1032,8 +1032,8 @@
       background-size: 28px 28px;
     }
     .restural-lp-social-proof-grid {
-      max-width: 1040px; margin: 36px auto 0;
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      max-width: 720px; margin: 36px auto 0;
+      display: flex; flex-direction: column; gap: 24px;
     }
     .restural-lp-social-proof-card {
       background: var(--rlp-white);
@@ -1050,7 +1050,7 @@
       display: block; width: 100%; height: auto;
     }
     @media (max-width: 640px) {
-      .restural-lp-social-proof-grid { grid-template-columns: 1fr; gap: 16px; }
+      .restural-lp-social-proof-grid { gap: 16px; padding: 0 12px; }
     }
 
     /* ===== WHO FOR / NOT FOR ===== */
@@ -2250,9 +2250,8 @@
   <section class="restural-lp-founder">
     <div class="restural-lp-founder-inner">
       <div>
-        <div class="restural-lp-img-ph restural-lp-img-ph--on-dark restural-lp-img-ph--tall" style="border-radius: 160px 160px 20px 20px;">
-          <span class="restural-lp-img-ph-icon">📷</span>
-          <span class="restural-lp-img-ph-label">{{RESTURAL_IMG_founder-portrait}}<br>Founder portrait photo — URL pending</span>
+        <div class="restural-lp-img-ph restural-lp-img-ph--on-dark restural-lp-img-ph--tall restural-lp-img-ph--loaded" style="border-radius: 160px 160px 20px 20px;">
+          <img src="v2-images/social/nf_founder_dr_jones.png" alt="Dr. Steven Jones — medical advisor, Restural" loading="lazy" />
         </div>
       </div>
       <div>
@@ -2382,7 +2381,7 @@
       <div class="restural-lp-pricing-card">
         <div class="restural-lp-pricing-card-image">
           <div class="restural-lp-img-ph restural-lp-img-ph--loaded">
-            <img src="v2-images/product/nf_product_catalog.png" alt="NeuroFuel 1-month starter" />
+            <img src="v2-images/product/nf_product_1box_cream.png" alt="NeuroFuel 1-month starter" />
           </div>
         </div>
         <p class="restural-lp-pricing-card-title">1-Month Starter</p>
