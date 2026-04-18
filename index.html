@@ -608,23 +608,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* ===== COMPARISON CARD IMAGE ===== */
-    .restural-lp-comparison-card-img {
-      width: 72px; height: 72px;
-      border-radius: 50%; margin: 0 auto 14px;
-      border: 2px solid rgba(224,168,50,0.4);
-      background: rgba(255,255,255,0.06);
-      overflow: hidden; position: relative;
-    }
-    .restural-lp-comparison-card-img .restural-lp-img-ph {
-      border-radius: 50%; width: 100%; height: 100%;
-      min-height: 0; padding: 4px; border: none;
-      background: transparent; color: rgba(255,255,255,0.35);
-      aspect-ratio: unset;
-    }
-    .restural-lp-comparison-card-img .restural-lp-img-ph-label { display: none; }
-    .restural-lp-comparison-card-img .restural-lp-img-ph-icon { font-size: 1.4rem; }
-
     /* ===== PRICING CARD IMAGE ===== */
     .restural-lp-pricing-card-image {
       width: 140px; height: 140px; margin: 0 auto 18px;
@@ -898,46 +881,70 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
       margin-top: 8px;
     }
+    @media (max-width: 1040px) {
+      .restural-lp-comparison-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     .restural-lp-comparison-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--rlp-radius);
-      padding: 28px 22px; text-align: center;
-      transition: border-color 0.2s, background 0.2s;
+      background: var(--rlp-white);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      transition: transform 220ms ease, box-shadow 220ms ease;
     }
     .restural-lp-comparison-card:hover {
-      border-color: var(--rlp-gold);
-      background: rgba(224,168,50,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+    }
+    .restural-lp-comparison-card-top {
+      background: var(--rlp-navy-deep);
+      color: var(--rlp-white);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(224,168,50,0.25);
+    }
+    .restural-lp-comparison-card-abbr {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 28px; padding: 0 8px;
+      background: var(--rlp-gold); color: var(--rlp-navy);
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.06em; border-radius: 6px;
+    }
+    .restural-lp-comparison-card-title {
+      font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--rlp-white);
+    }
+    .restural-lp-comparison-card-mid {
+      background: var(--rlp-cream);
+      background-image: var(--rlp-dots-cream);
+      background-size: 20px 20px;
+      padding: 20px;
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 4 / 3;
+    }
+    .restural-lp-comparison-card-mid img {
+      display: block; width: 100%; height: 100%;
+      object-fit: contain; max-height: 220px;
+    }
+    .restural-lp-comparison-card-bot {
+      background: var(--rlp-gold);
+      color: var(--rlp-navy);
+      padding: 14px 18px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
     }
     .restural-lp-comparison-card-stat {
-      font-size: 2.4rem; font-weight: 900;
-      color: var(--rlp-gold); line-height: 1;
-      margin-bottom: 6px; letter-spacing: -0.03em;
+      font-size: 1.9rem; font-weight: 900; line-height: 1;
+      letter-spacing: -0.02em;
     }
     .restural-lp-comparison-card-stat-unit {
-      font-size: 1.3rem; color: var(--rlp-gold); font-weight: 700;
+      font-size: 1.15rem; font-weight: 800;
     }
-    .restural-lp-comparison-card h3 {
-      font-size: 0.78rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 10px; color: var(--rlp-text-on-dark); opacity: 0.85;
+    .restural-lp-comparison-card-claim {
+      font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--rlp-navy);
     }
-    .restural-lp-comparison-card p {
-      font-size: 0.88rem; line-height: 1.55; opacity: 0.78;
-    }
-    .restural-lp-comparison-promise {
-      display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
-      margin-top: 36px; padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .restural-lp-comparison-promise-tag {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 8px 16px; border-radius: 20px;
-      font-size: 0.76rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.06em;
-    }
-    .restural-lp-comparison-promise-tag::before { content: '✓ '; color: var(--rlp-green); margin-right: 2px; }
 
     /* ===== MANUFACTURING ===== */
     .restural-lp-manufacturing {
@@ -2044,59 +2051,83 @@
       </div>
       <div class="restural-lp-comparison-grid">
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">🧠</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">NGF</span>
+            <span class="restural-lp-comparison-card-title">Nerve Growth Factor</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">4<span class="restural-lp-comparison-card-stat-unit">X</span></div>
-          <h3>NGF Synthesis</h3>
-          <p>More nerve growth factor production than standard mushroom supplements.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_ngf.png" alt="Brain with gold neural pathways illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">4<span class="restural-lp-comparison-card-stat-unit">×</span></span>
+            <span class="restural-lp-comparison-card-claim">NGF Synthesis</span>
+          </div>
         </div>
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">🛡</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">BBB</span>
+            <span class="restural-lp-comparison-card-title">Blood-Brain Barrier</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">92<span class="restural-lp-comparison-card-stat-unit">%</span></div>
-          <h3>Barrier Crossing</h3>
-          <p>Of capsule supplements don't cross the blood-brain barrier. Hericenones do.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_bbb.png" alt="Droplet passing through cellular barrier illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">92<span class="restural-lp-comparison-card-stat-unit">%</span></span>
+            <span class="restural-lp-comparison-card-claim">Barrier Crossing</span>
+          </div>
         </div>
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">💧</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">ABS</span>
+            <span class="restural-lp-comparison-card-title">Absorption Rate</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">3<span class="restural-lp-comparison-card-stat-unit">X</span></div>
-          <h3>Bioavailability</h3>
-          <p>Faster absorption rate than pill-form lion's mane extract.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_bioav.png" alt="Droplet absorbed into bloodstream illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">3<span class="restural-lp-comparison-card-stat-unit">×</span></span>
+            <span class="restural-lp-comparison-card-claim">Bioavailability</span>
+          </div>
         </div>
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">📅</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">CAL</span>
+            <span class="restural-lp-comparison-card-title">Daily Routine</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">94<span class="restural-lp-comparison-card-stat-unit">%</span></div>
-          <h3>Daily Adherence</h3>
-          <p>Of users stay consistent vs. 48% on pill-based protocols.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_adherence.png" alt="Calendar with daily checkmarks illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">94<span class="restural-lp-comparison-card-stat-unit">%</span></span>
+            <span class="restural-lp-comparison-card-claim">Daily Adherence</span>
+          </div>
         </div>
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">☕</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">C+M</span>
+            <span class="restural-lp-comparison-card-title">Coffee + Mushroom</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">2<span class="restural-lp-comparison-card-stat-unit">X</span></div>
-          <h3>Caffeine Synergy</h3>
-          <p>Neuroprotective effect when lion's mane is paired with coffee.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_synergy.png" alt="Coffee bean and lion's mane paired illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">2<span class="restural-lp-comparison-card-stat-unit">×</span></span>
+            <span class="restural-lp-comparison-card-claim">Caffeine Synergy</span>
+          </div>
         </div>
         <div class="restural-lp-comparison-card">
-          <div class="restural-lp-comparison-card-img">
-            <div class="restural-lp-img-ph"><span class="restural-lp-img-ph-icon">⚗</span></div>
+          <div class="restural-lp-comparison-card-top">
+            <span class="restural-lp-comparison-card-abbr">β-G</span>
+            <span class="restural-lp-comparison-card-title">Beta-Glucan Content</span>
           </div>
-          <div class="restural-lp-comparison-card-stat">30<span class="restural-lp-comparison-card-stat-unit">%</span></div>
-          <h3>Clinical Grade</h3>
-          <p>Beta-glucan content—pharmaceutical extraction standard.</p>
+          <div class="restural-lp-comparison-card-mid">
+            <img src="v2-images/stats/nf_stats_card_clinical.png" alt="Beta-glucan molecular structure with clinical stamp illustration" loading="lazy" />
+          </div>
+          <div class="restural-lp-comparison-card-bot">
+            <span class="restural-lp-comparison-card-stat">30<span class="restural-lp-comparison-card-stat-unit">%</span></span>
+            <span class="restural-lp-comparison-card-claim">Clinical Grade</span>
+          </div>
         </div>
-      </div>
-      <div class="restural-lp-comparison-promise">
-        <span class="restural-lp-comparison-promise-tag">Non-GMO</span>
-        <span class="restural-lp-comparison-promise-tag">Pharmaceutical Grade</span>
-        <span class="restural-lp-comparison-promise-tag">Third-Party Tested</span>
-        <span class="restural-lp-comparison-promise-tag">No Fillers</span>
       </div>
     </div>
   </section>
