@@ -1585,21 +1585,29 @@
           "image"
           "bottom";
         text-align: center; gap: 20px;
+        justify-items: center;
       }
-      .restural-lp-hero h1 { font-size: 1.65rem; }
+      .restural-lp-hero-content-top,
+      .restural-lp-hero-content-bottom { width: 100%; max-width: 100%; }
+      .restural-lp-hero h1 { font-size: 1.65rem; max-width: 560px; margin-left: auto; margin-right: auto; }
       .restural-lp-hero-eyebrow { font-size: 0.62rem; }
       .restural-lp-hero-sub { margin: 0 auto 20px; font-size: 0.92rem; }
       .restural-lp-hero-proof { justify-content: center; }
       .restural-lp-hero-badges { justify-content: center; gap: 14px; }
       .restural-lp-hero-badge { font-size: 0.66rem; }
-      .restural-lp-hero-badge-float { top: 10px; right: 8px; width: 86px; height: 86px; box-shadow: 0 0 0 3px var(--rlp-gold), 0 0 0 5px var(--rlp-coral-dark), 0 8px 22px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.2); animation: none; }
+      .restural-lp-hero-image-col {
+        padding-top: 0;
+        width: 280px; max-width: 100%;
+        margin-left: auto; margin-right: auto;
+        justify-self: center;
+      }
+      .restural-lp-hero-badge-float { top: 6px; right: -14px; width: 86px; height: 86px; box-shadow: 0 0 0 3px var(--rlp-gold), 0 0 0 5px var(--rlp-coral-dark), 0 8px 22px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.2); animation: none; }
       .restural-lp-hero-badge-float-num { font-size: 1.25rem; }
       .restural-lp-hero-badge-float-day { font-size: 0.52rem; letter-spacing: 0.18em; }
       .restural-lp-hero-badge-float-txt { font-size: 0.44rem; padding-top: 3px; margin-top: 4px; }
-      .restural-lp-hero-carousel { margin: 20px auto 0; }
-      .restural-lp-hero-image-col { padding-top: 0; }
+      .restural-lp-hero-carousel { margin: 20px auto 0; width: 100%; max-width: 480px; }
       .restural-lp-img-ph--arch { min-height: 320px; max-width: 280px; margin: 0 auto; border-radius: 180px 180px 18px 18px; }
-      .restural-lp-cta-primary { width: 100%; padding: 14px 20px; font-size: 0.9rem; }
+      .restural-lp-cta-primary { width: 100%; padding: 14px 20px; font-size: 0.9rem; box-sizing: border-box; }
 
       .restural-lp-testimonials { padding: 40px 20px; }
       .restural-lp-testimonials-grid { grid-template-columns: 1fr; }
