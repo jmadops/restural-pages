@@ -671,7 +671,8 @@
       .restural-lp-flash-strip { font-size: 0.7rem; padding: 8px 12px; }
       .restural-lp-hero { padding: 28px 20px 0; }
       .restural-lp-hero::before { display: none; }
-      .restural-lp-hero-inner { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+      .restural-lp-hero-inner { grid-template-columns: minmax(0, 1fr); text-align: center; gap: 20px; width: 100%; }
+      .restural-lp-hero-inner > * { min-width: 0; max-width: 100%; }
       .restural-lp-hero h1 { font-size: 1.5rem; }
       .restural-lp-hero-eyebrow { font-size: 0.62rem; }
       .restural-lp-hero-sub { margin: 0 auto 18px; font-size: 0.9rem; }

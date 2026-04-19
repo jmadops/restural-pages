@@ -1577,7 +1577,7 @@
       .restural-lp-hero { padding: 32px 20px 28px; }
       .restural-lp-hero::before, .restural-lp-hero::after { display: none; }
       .restural-lp-hero-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
           "navbar"
           "menu"
@@ -1585,7 +1585,12 @@
           "image"
           "bottom";
         text-align: center; gap: 20px;
+        width: 100%;
       }
+      .restural-lp-hero-inner > * { min-width: 0; max-width: 100%; }
+      .restural-lp-hero-content-top,
+      .restural-lp-hero-content-bottom { justify-self: center; width: 100%; }
+      .restural-lp-hero-carousel-track { max-width: 100%; }
       .restural-lp-hero h1 {
         font-size: 1.55rem;
         overflow-wrap: break-word;
